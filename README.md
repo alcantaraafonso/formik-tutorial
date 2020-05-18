@@ -66,8 +66,8 @@ Para executar este rode o comando `yarn start` e abra o navegador em: [http://lo
 
 #### Formulário
 
-![View](src/img/form_01.PNG)
+![View](/src/img/form_01.PNG)
 
 #### Formulário validado
 
-![View](src/img/form_02.PNG)
+![View](/src/img/form_02.PNG)
