@@ -17,53 +17,57 @@ Retornar uma estrutura Formik como a seguir:
 
 ```
 <Formik
-			initialValues={{
-				name: '',
-				email: '',
-				acceptedTerms: false,
-				specialPower: ''
-			}}
-			validationSchema={Yup.object({
-				name: Yup.string()
-					.min(3, 'Must be at least 3 characters')
-					.max(15, 'Must be 15 characters or less')
-					.required('Field is required'),
-				email: Yup.string()
-					.email('Invalid Email address')
-					.required('Field is required'),
-				acceptedTerms: Yup.boolean()
-					.required('Field is required')
-					.oneOf([true], 'You must accept the terms and conditions'),
-				specialPower: Yup.string()
-					.oneOf(
-						['flight', 'invisibility', 'Wealthy bad guy', 'other'],
-						'Invalid special power'
-					)
-					.required('Field is required')
-			})}
-			onSubmit={(values, { setSubmitting, resetForm }) => {
-				//Chamar a action
-				setTimeout(() => {
-					alert(JSON.stringify(values, null, 2));
-					resetForm();
-					setSubmitting(false);
-				}, 3000);
-			}}
-		>
-			{(props) => (
-				<Form>
-                ...
-                </Form>
-            )}
-		</Formik>
+    initialValues={{
+        name: '',
+        email: '',
+        acceptedTerms: false,
+        specialPower: ''
+    }}
+    validationSchema={Yup.object({
+        name: Yup.string()
+            .min(3, 'Must be at least 3 characters')
+            .max(15, 'Must be 15 characters or less')
+            .required('Field is required'),
+        email: Yup.string()
+            .email('Invalid Email address')
+            .required('Field is required'),
+        acceptedTerms: Yup.boolean()
+            .required('Field is required')
+            .oneOf([true], 'You must accept the terms and conditions'),
+        specialPower: Yup.string()
+            .oneOf(
+                ['flight', 'invisibility', 'Wealthy bad guy', 'other'],
+                'Invalid special power'
+            )
+            .required('Field is required')
+    })}
+    onSubmit={(values, { setSubmitting, resetForm }) => {
+        //Chamar a action
+        setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            resetForm();
+            setSubmitting(false);
+        }, 3000);
+    }}
+>
+    {(props) => (
+        <Form>
+        ...
+        </Form>
+    )}
+</Formik>
 ```
 
-In the project directory, you can run:
+### Execução - `yarn start`
 
-### `yarn start`
+Para executar este rode o comando `yarn start` e abra o navegador em: [http://localhost:3000](http://localhost:3000).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### View
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### Formulário
+
+![View](src/img/form_01.PNG)
+
+#### Formulário validado
+
+![View](src/img/form_02.PNG)
